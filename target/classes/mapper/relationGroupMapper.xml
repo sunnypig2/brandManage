@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Dao.relationGroupMapper">
+  <resultMap id="BaseResultMap" type="Entity.relationGroup">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="relation_name" jdbcType="VARCHAR" property="relationName" />
+    <result column="class_id" jdbcType="INTEGER" property="classId" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, relation_name, class_id, type
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from relation_group
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from relation_group
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="Entity.relationGroup">
+    insert into relation_group (id, relation_name, class_id, 
+      type)
+    values (#{id,jdbcType=INTEGER}, #{relationName,jdbcType=VARCHAR}, #{classId,jdbcType=INTEGER}, 
+      #{type,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="Entity.relationGroup">
+    insert into relation_group
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="relationName != null">
+        relation_name,
+      </if>
+      <if test="classId != null">
+        class_id,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="relationName != null">
+        #{relationName,jdbcType=VARCHAR},
+      </if>
+      <if test="classId != null">
+        #{classId,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="Entity.relationGroup">
+    update relation_group
+    <set>
+      <if test="relationName != null">
+        relation_name = #{relationName,jdbcType=VARCHAR},
+      </if>
+      <if test="classId != null">
+        class_id = #{classId,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="Entity.relationGroup">
+    update relation_group
+    set relation_name = #{relationName,jdbcType=VARCHAR},
+      class_id = #{classId,jdbcType=INTEGER},
+      type = #{type,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="getAllRelationGroup" resultMap="BaseResultMap">
+    select *
+    from relation_group
+  </select>
+  <select id="getRelationGroupByNameAndClass" parameterType="java.util.Map" resultMap="BaseResultMap">
+    select *
+    from relation_group
+    where class_id = #{classId,jdbcType=INTEGER} and relation_name like "%"#{relationName}"%"
+  </select>
+</mapper>

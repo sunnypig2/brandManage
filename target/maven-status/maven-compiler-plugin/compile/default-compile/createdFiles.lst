@@ -1,0 +1,15 @@
+Entity\brandItem.class
+Dao\relationGroupMapper.class
+Dao\freqItemsetsMapper.class
+Service\impl\IndexServiceImpl.class
+Service\IndexService.class
+Controllers\IndexController.class
+Entity\freqItemsets.class
+Dao\brandItemMapper.class
+Entity\relationItem.class
+Entity\brandGroup.class
+Dao\brandClassMapper.class
+Entity\brandClass.class
+Entity\relationGroup.class
+Dao\brandGroupMapper.class
+Dao\relationItemMapper.class

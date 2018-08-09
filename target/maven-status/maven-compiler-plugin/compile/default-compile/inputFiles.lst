@@ -1,0 +1,15 @@
+D:\project\brandRelationGenerator\src\main\java\Entity\brandClass.java
+D:\project\brandRelationGenerator\src\main\java\Entity\relationItem.java
+D:\project\brandRelationGenerator\src\main\java\Service\IndexService.java
+D:\project\brandRelationGenerator\src\main\java\Dao\relationGroupMapper.java
+D:\project\brandRelationGenerator\src\main\java\Entity\brandGroup.java
+D:\project\brandRelationGenerator\src\main\java\Dao\brandClassMapper.java
+D:\project\brandRelationGenerator\src\main\java\Dao\freqItemsetsMapper.java
+D:\project\brandRelationGenerator\src\main\java\Service\impl\IndexServiceImpl.java
+D:\project\brandRelationGenerator\src\main\java\Entity\brandItem.java
+D:\project\brandRelationGenerator\src\main\java\Dao\relationItemMapper.java
+D:\project\brandRelationGenerator\src\main\java\Dao\brandGroupMapper.java
+D:\project\brandRelationGenerator\src\main\java\Entity\freqItemsets.java
+D:\project\brandRelationGenerator\src\main\java\Dao\brandItemMapper.java
+D:\project\brandRelationGenerator\src\main\java\Entity\relationGroup.java
+D:\project\brandRelationGenerator\src\main\java\Controllers\IndexController.java
